@@ -16,7 +16,7 @@ sub lastFile {
 	return $final + 1;
 }
 
-my $file = glob "~/project/checklist/checklist.txt";
+my $file = glob "~/project/terminalchecklist/checklist.txt";
 my $arg = $ARGV[0];
 if ($arg eq 'list') {
     open F, "<", $file or die;
