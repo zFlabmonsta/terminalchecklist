@@ -6,8 +6,10 @@ if (@ARGV == 0) {
     exit 1;
 }
 
+my $file = glob "~/project/terminalchecklist/checklist.txt";
+
 sub lastFile {
-	open my $F, "<", "checklist.txt" or die;
+	open my $F, "<", $file or die;
 	my $final = 0;
 	while (my $line = <$F>) {
 		$final++;	
@@ -16,7 +18,6 @@ sub lastFile {
 	return $final + 1;
 }
 
-my $file = glob "~/project/terminalchecklist/checklist.txt";
 my $arg = $ARGV[0];
 if ($arg eq 'list') {
     open F, "<", $file or die;
